@@ -8,31 +8,15 @@ import com.slyvronline.engine.common.objects.Img;
 
 public class Global {
 
-	private ArrayList<Img> imgs;
+	FileLibrary lib;
 	
 	public Global() {
-		imgs = new ArrayList<Img>();
-		
-		//This logic should normally go somewhere else like a LoadImagesSystem
-		Img image = new Img();
-		image.setName("badlogic");
-		image.setTexture(new Texture(Gdx.files.internal("badlogic.jpg")));
-		imgs.add(image);
+		lib = new FileLibrary();
+		lib.loadTextures();
 	}
 	
-	public Img getImgByName(String name) {
-		for(Img img : imgs)
-			if (img.getName().equals(name)) return img;
-		return null;
+	public Texture getTexByName(String name) {
+		return lib.getTex(name);
 	}
-	
-	public ArrayList<Img> getImgs() {
-		return imgs;
-	}
-
-	public void setImgs(ArrayList<Img> imgs) {
-		this.imgs = imgs;
-	}
-	
 	
 }

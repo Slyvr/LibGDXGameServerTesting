@@ -16,11 +16,11 @@ public class GameSession implements Serializable {
 		entities = new ArrayList<Entity>();
 		
 		Entity entity = new Entity();
-		RenderableProperty renderable = new RenderableProperty();
-		renderable.setName("badlogic");
-		renderable.setX(100);
-		renderable.setY(100);
-		entity.getProperties().add(renderable);
+		Img img = new Img();
+		img.setName("badlogic");
+		img.setX(100);
+		img.setY(100);
+		entity.setImg(img);
 		entities.add(entity);
 	}
 

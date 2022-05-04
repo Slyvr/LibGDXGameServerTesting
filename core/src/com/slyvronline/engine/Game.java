@@ -14,9 +14,23 @@ import com.slyvronline.engine.client.ClientController;
 import com.slyvronline.engine.common.Global;
 import com.slyvronline.engine.common.objects.Entity;
 import com.slyvronline.engine.common.objects.GameSession;
+import com.slyvronline.engine.common.objects.Img;
 import com.slyvronline.engine.common.objects.RenderableProperty;
 import com.slyvronline.engine.server.ServerController;
 
+/**
+ * @author Matthew Schrum - slyvr
+ * This application is built as a test example of a Client/Server relation
+ * for use with LibGDX.  Depending on how this is executed it either starts
+ * a client, server, or both.  The client communicates to the server on localhost
+ * via ports 54555,54777
+ * When a connection is created, the server sends continuous updates of a GameSession
+ * object that the client is continuously replacing.  The server will maintain updates
+ * to the GameSession and the client will render what it gets in the GameSession object.
+ * In this example, one entity for the basic badlogic logo is rendered to the screen and
+ * updated to move to the right from the server.
+ *
+ */
 public class Game extends ApplicationAdapter {
 	
 	private String type;
@@ -85,6 +99,7 @@ public class Game extends ApplicationAdapter {
 		kryo.register(ArrayList.class);
 		kryo.register(Entity.class);
 		kryo.register(RenderableProperty.class);
+		kryo.register(Img.class);
 	}
 
 	public String getType() {

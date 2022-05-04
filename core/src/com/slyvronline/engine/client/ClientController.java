@@ -20,7 +20,7 @@ public class ClientController {
 	public void connect(){
 		Game.getKryoclient().start();
 		try {
-			Game.getKryoclient().connect(5000, "192.168.80.18", 54555, 54777);
+			Game.getKryoclient().connect(5000, "localhost", 54555, 54777);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
