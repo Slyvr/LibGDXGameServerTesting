@@ -7,11 +7,13 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryonet.Client;
 import com.esotericsoftware.kryonet.Server;
 import com.slyvronline.engine.client.ClientController;
 import com.slyvronline.engine.common.Global;
+import com.slyvronline.engine.common.objects.ClientGameSession;
 import com.slyvronline.engine.common.objects.Entity;
 import com.slyvronline.engine.common.objects.GameSession;
 import com.slyvronline.engine.common.objects.Img;
@@ -100,6 +102,8 @@ public class Game extends ApplicationAdapter {
 		kryo.register(Entity.class);
 		kryo.register(RenderableProperty.class);
 		kryo.register(Img.class);
+		kryo.register(ClientGameSession.class);
+		kryo.register(Rectangle.class);
 	}
 
 	public String getType() {

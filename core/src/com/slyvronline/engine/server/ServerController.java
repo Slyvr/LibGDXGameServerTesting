@@ -36,7 +36,7 @@ public class ServerController {
 		if (counter > 5) {
 			counter = 0;
 			Entity ent = (Entity)game.getEntities().get(0);
-			ent.getImg().setX(ent.getX() + 1);
+			//ent.getImg().setX(ent.getX() + 1);
 		}
 		else {
 			counter++;
